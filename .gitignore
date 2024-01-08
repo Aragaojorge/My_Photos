@@ -1,0 +1,42 @@
+# Ignore Composer's vendor directory
+/vendor/
+
+# Ignore PHPStorm configuration
+/.idea/
+
+# Ignore runtime files
+/.vscode/
+/.phpstorm.meta.php/
+
+# Ignore sensitive environment configuration
+/.env
+
+# Ignore user-specific files
+/.DS_Store
+/Thumbs.db
+
+# Ignore logs and caches
+/log/
+/tmp/
+/cache/
+
+# Ignore session files
+/sessions/
+
+# Ignore Composer lock file
+/composer.lock
+
+# Ignore local configuration files
+/config/local.php
+
+# Ignore generated files
+/generated/
+
+# Ignore dependencies installed via npm
+/node_modules/
+
+# Ignore assets
+/public/assets/
+
+# Ignore uploaded files
+/public/uploads/
