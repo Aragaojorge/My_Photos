@@ -2,6 +2,11 @@
 
 namespace Thunder;
 
+// Define DS if not already defined - I had to create this to solve : Undefined constant 'Thunder\DS'. Added: 08/01/2024
+if (!defined('DS')) {
+    define('DS', DIRECTORY_SEPARATOR);
+}
+
 defined('CPATH') OR exit('Access Denied!');
 
 /**

@@ -44,6 +44,9 @@ class Migration
             $query = trim($query,",");
             $query .= ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
+            // echo DBNAME;
+            // echo $query;
+
             $this->query($query);
 
             $this->columns      = [];
@@ -71,6 +74,11 @@ class Migration
     protected function addUniqueKey($key)
     {
         $this->uniqueKeys[] = $key;
+    }
+
+    protected function addKey($key)
+    {
+        $this->keys[] = $key;
     }
 
     protected function addData($key, $value)

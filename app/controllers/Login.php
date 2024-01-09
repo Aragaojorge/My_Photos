@@ -14,6 +14,7 @@ class Login
 	public function index()
 	{
 
+		$data['title'] = 'Login';
 		$data['user'] = new \Model\User;
 		$req = new \Core\Request;
 		if($req->posted())

@@ -14,6 +14,7 @@ class Signup
 	public function index()
 	{
 
+		$data['title'] = 'Signup';
 		$data['user'] = new \Model\User;
 		$req = new \Core\Request;
 		if($req->posted())

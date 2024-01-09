@@ -20,7 +20,10 @@ class User
 
 		'username',
 		'email',
+		'role',
 		'password',
+		'date_created',
+		'date_update',
 	];
 
 	/*****************************
@@ -48,6 +51,11 @@ class User
 			'alpha',
 			'required',
 		],
+		
+		'role' => [
+			'alpha',
+			'required',
+		],
 		'password' => [
 			'not_less_than_8_chars',
 			'required',
@@ -65,6 +73,11 @@ class User
 			'alpha',
 			'required',
 		],
+
+		'role' => [
+			'alpha',
+			'required',
+		],
 		'password' => [
 			'not_less_than_8_chars',
 			'required',
@@ -77,10 +90,12 @@ class User
 		{
 			//add extra user columns here
 			$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-			$data['date'] = date("Y-m-d H:i:s");
+			$data['role'] = 'user';
+			$data['date_updated'] = date("Y-m-d H:i:s");
 			$data['date_created'] = date("Y-m-d H:i:s");
 
 			$this->insert($data);
+			message('Your account was created! Please login to continue...');
 			redirect('login');
 		}
 	}
@@ -96,7 +111,19 @@ class User
 			{
 				$ses = new \Core\Session;
 				$ses->auth($row);
-				redirect('home');
+
+				switch ($row->role) {
+					case 'admin':
+						redirect('admin');
+						break;
+					case 'user':
+						redirect('home');
+						break;
+					default:
+						redirect('home');
+						break;
+				}
+
 			}else{
 				$this->errors[$this->loginUniqueColumn] = "Wrong $this->loginUniqueColumn or password";
 			}

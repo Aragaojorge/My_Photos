@@ -5,13 +5,13 @@ namespace Model;
 defined('ROOTPATH') OR exit('Access Denied!');
 
 /**
- * {CLASSNAME} class: SampleModel
+ * Photo class: SampleModel
  */
-class {CLASSNAME} {
+class SampleModel {
 	
 	use Model;
 
-	protected $table = '{table}';
+	protected $table = 'photos';
 	protected $primaryKey = 'id';
 	protected $loginUniqueColumn = 'email';
 

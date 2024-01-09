@@ -7,7 +7,7 @@ defined('ROOTPATH') OR exit('Access Denied!');
 /**
  * {CLASSNAME} class: SampleMigration
  */
-class SampleMigration extends Migration {
+class {CLASSNAME} extends Migration {
 	
 	public function up()
 	{
