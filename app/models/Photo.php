@@ -7,19 +7,21 @@ defined('ROOTPATH') OR exit('Access Denied!');
 /**
  * Photo class: SampleModel
  */
-class SampleModel {
+class Photo {
 	
 	use Model;
 
 	protected $table = 'photos';
 	protected $primaryKey = 'id';
-	protected $loginUniqueColumn = 'email';
+	protected $loginUniqueColumn = 'id';
 
 	protected $allowedColumns = [
 
-		'username',
-		'email',
-		'password',
+		'user_id',
+		'title',
+		'image',
+		'date_created',
+		'date_updated',
 	];
 
 	/*****************************
@@ -36,21 +38,12 @@ class SampleModel {
 		alpha_symbol
 	 * 
 	 ****************************/
-	protected $validationRules = [
+	protected $onInsertValidationRules = [
 
-		'email' => [
-			'email',
-			'unique',
+		'title' => [
+			'alpha_numeric_symbol',
 			'required',
-		],
-		'username' => [
-			'alpha',
-			'required',
-		],
-		'password' => [
-			'not_less_than_8_chars',
-			'required',
-		],
+		]
 	];
 
 }

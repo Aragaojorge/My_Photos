@@ -11,7 +11,7 @@ class Image
 {
 	
 	
-	public function resize($filename,$max_size = 700)
+	public function resize($filename,$max_size = 1500)
 	{
 	
 		/** check what kind of file type it is **/
@@ -113,7 +113,7 @@ class Image
 	}
 	
 	
-	public function crop($filename,$max_width = 700,$max_height = 700)
+	public function crop($filename,$max_width = 1500,$max_height = 1500)
 	{
 	
 		/** check what kind of file type it is **/
@@ -229,7 +229,7 @@ class Image
 	}
 
 
-	public function getThumbnail($filename, $max_width = 700, $max_height = 700)
+	public function getThumbnail($filename, $max_width = 1500, $max_height = 1500)
 	{
 
 		if(file_exists($filename))

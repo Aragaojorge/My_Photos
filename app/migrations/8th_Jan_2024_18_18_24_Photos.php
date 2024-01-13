@@ -14,10 +14,9 @@ class Photos extends Migration {
 
 		/** create a table **/
 		$this->addColumn('id int(11) NOT NULL AUTO_INCREMENT');
-		$this->addColumn('username varchar(30) NULL');
-		$this->addColumn('email varchar(100) NULL');
-		$this->addColumn('role varchar(20) NULL');
-		$this->addColumn('password varchar(255) NULL');
+		$this->addColumn('user_id int(11) default 0 NOT NULL');
+		$this->addColumn('title varchar(100) NULL');
+		$this->addColumn('image varchar(1024) NULL');
 		$this->addColumn('date_created datetime NULL');
 		$this->addColumn('date_updated datetime NULL');
 		$this->addPrimaryKey('id');

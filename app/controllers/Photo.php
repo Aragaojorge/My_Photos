@@ -5,17 +5,17 @@ namespace Controller;
 defined('ROOTPATH') OR exit('Access Denied!');
 
 /**
- * {CLASSNAME} class: ControlMain
+ * Photo class: ControlMain
  */
 
-class {CLASSNAME} {
+class Photo {
 	use MainController;
 
 	public function index()
 	{
-		$data['title'] = '{CLASSNAME}';
+		$data['title'] = 'Photo';
 
-		$this->view('{classname}', $data);
+		$this->view('photo', $data);
 	}
 
 }
